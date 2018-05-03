@@ -6,25 +6,18 @@
   </head>
   <body>
 <h1>Hra</h1>
-<?php
-    $KCGPU = 10 ; // index spotřeb.
-    $KCCPU = 10 ; // index spotřeb.
-    $KCRAM = 16 ; // GB
-    $KCHDD = 40 ; // GB
-//------------------------------------------------------------------------------
-    $myGPU = 10 ; // Moje GPU koupený z Alzy.cz. (TAKZE LEDŽIT)
-    $myCPU = 10 ; // Moje CPU co jsem koupil včera u čongů.
-    $myRAM = 16 ; // Tyhle RAMky jsem vzal ze školy. (GIGA)
-    $myHDD = 60 ; // HDD jsem si vzal od dědy (GIGABAJTŮ).
-?>
-<?php
-   if (($KCGPU <= $myGPU)&&($KCCPU <= $myCPU)&&($KCRAM <= $myRAM)&&($KCHDD <= $myHDD)) {
-      echo "V pohodě. tu hru rozjedeš";
-   }
-   else {
-     echo "Máš smůlu. zahraj si radši Tetris";
-   }
- ?>
+
+<form action="submit.php" method="post">
+<label for="myGPU">GPU </label>
+<input id="myGPU" min="1" max="10" type="number" name='myGPU' placeholder="10" /> <br />
+<label for="myCPU">CPU </label>
+<input id="myCPU" min="1" max="10" type="number" name='myCPU' placeholder="10" /> <br />
+<label for="myRAM">RAM </label>
+<input id="myRAM" min="1" max="16" type="number" name='myRAM' placeholder="16" /> <hr />
+<label for="myHDD">HDD </label>
+<input id="myHDD" min="1" max="1000" type="number" name='myHDD' placeholder="40" /> <hr />
+
+  <input name='submit' type="submit" value="Odeslat" />
 
   </body>
 </html>
